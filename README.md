@@ -67,7 +67,7 @@ Stored record example:
 - [AutoMapper](https://github.com/AutoMapper/AutoMapper)
 - [AutoMapper.Extensions.Microsoft.DependencyInjection](https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection)
 - [xunit](https://github.com/xunit/xunit)
-- [Moq](https://github.com/moq/moq4)
+- [Moq](https://githudb.com/moq/moq4)
 
 ## Setup environment
 **Prerequisite**: Make sure you have installed .NET Core SDK 2.1.1 and PostgreSQL 11.5.
