@@ -1,7 +1,5 @@
 # Tibber Robot Movement
 
-## Problem Specification
-
 Tibber platform consists of swarm of micro services running as Docker containers. Primary development platforms are .NET Core and Node JS in conjunction with other platforms. Backed mostly using PostgreSQL as relational/document storage and Amazon S3 as blob storage.
 
 Create a new micro service that could fit into the Tibber Platform environment as described above. The service will simulate a robot moving in an office space and cleaning the places the robot visits. The path of the robot movement is described by start coordinates and move commands. After the cleaning has been done the robot reports the number of unique places cleaned, and the service will store the result into the database. The service listens to HTTP protocol on port 5000.
