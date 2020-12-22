@@ -102,4 +102,4 @@ You can run the backend service in two ways.
 
 ```docker-compose build```
 
-```docker-compose up ```
+```docker-compose up```
