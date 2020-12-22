@@ -1,5 +1,7 @@
 # Tibber Robot Movement
+
 ## Problem Specification
+
 Tibber platform consists of swarm of micro services running as Docker containers. Primary development platforms are .NET Core and Node JS in conjunction with other platforms. Backed mostly using PostgreSQL as relational/document storage and Amazon S3 as blob storage.
 
 Create a new micro service that could fit into the Tibber Platform environment as described above. The service will simulate a robot moving in an office space and cleaning the places the robot visits. The path of the robot movement is described by start coordinates and move commands. After the cleaning has been done the robot reports the number of unique places cleaned, and the service will store the result into the database. The service listens to HTTP protocol on port 5000.
@@ -22,7 +24,6 @@ direction ∈ {north, east, south, west}
 
 Request body example:
 
-```
 {
     "start": {
         "x": 10,
@@ -39,17 +40,13 @@ Request body example:
         }
     ]
 }
-```
-
 
 The resulting value will be stored in a table named executions together with timestamp of insertion, number of command elements and duration of the calculation in seconds.
 
 Stored record example:
 
-| id  | timestamp | commmands | result | duration
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1234  | 2018-05-12 12:45:10.851596 +02:00 | 2 | 4 | 0.000123 |
-
+| id  | timestamp                         | commmands | result | duration |
+| 1234| 2018-05-12 12:45:10.851596 +02:00 | 2         | 4      | 0.000123 |
 
 ## Technical Specification
 
@@ -57,7 +54,8 @@ Stored record example:
 
 **Framework**: .NET Core 2.1
 
-**Project Dependencies**: 
+**Project Dependencies**:
+
 - [Microsoft.EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)
 - [Npgsql.EntityFrameworkCore.PostgreSQL](https://github.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL)
 - [Npgsql.EntityFrameworkCore.PostgreSQL.Design](https://github.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL)
@@ -70,10 +68,13 @@ Stored record example:
 - [Moq](https://githudb.com/moq/moq4)
 
 ## Setup environment
+
 **Prerequisite**: Make sure you have installed .NET Core SDK 2.1.1 and PostgreSQL 11.5.
 
 You can run the backend service in two ways.
-#### Visual Studio
+
+### Visual Studio
+
 - Open TibberRobot.sln.
 - Clean and rebuild the solution Debug menu.
 - Configure your database from appsettings.json/ and appsettings.development.json
@@ -81,12 +82,14 @@ You can run the backend service in two ways.
 - Run application from debug menu.
 
 #### Command Line
-- Open a command line on the solution folder. 
+
+- Open a command line on the solution folder.
 - And use the following commands.
 
 ```dotnet restore```
 
-```dotnet build ```
+```dotnet build```
+
 - Configure your database from appsettings.json/ and appsettings.development.json and execute
 
 ```dotnet ef database update```
@@ -94,11 +97,11 @@ You can run the backend service in two ways.
 ```dotnet run```
 
 ### Run docker container
+
 - Open root folder
 - Open command line on that folder
 - Execute following commands
 
 ```docker-compose build```
 
-```docker-compose up```
-
+```docker-compose up ```
