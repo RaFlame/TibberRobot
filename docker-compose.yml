@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/var/www/tibberrobot
     ports:
-      - '5001:80'
+      - '5080:80'
     depends_on:
       - 'db'
     networks:
@@ -20,8 +20,7 @@ services:
     image: postgres:latest
     environment:
         - POSTGRES_USERNAME=postgres
-        - POSTGRES_PASSWORD=abuzafor73azf
-        - POSTGRES_DB=tibberrobot
+        - POSTGRES_PASSWORD=cleo242701
     ports:
         - "5432:5432"
     restart: unless-stopped
@@ -43,7 +42,7 @@ services:
     container_name: 'postgres'
     image: postgres
     environment:
-      - POSTGRES_PASSWORD=abuzafor73azf
+      - POSTGRES_PASSWORD=cleo242701
     networks:
       - aspnetcoreapp-network
 
